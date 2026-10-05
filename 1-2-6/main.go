@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 // 掌握go语言的map基础语法用法
 
@@ -39,4 +42,13 @@ func main() {
 
 	// 使用len()判断长度
 	fmt.Println(len(m2))
+
+	// map是并发不安全的，可以用sync.Map
+	var m3 sync.Map // 这个零值可用
+	m3.Store("a", 1)
+	v, ok := m3.Load("a")
+	if ok {
+		s := v.(int)
+		fmt.Println(s)
+	}
 }
