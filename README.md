@@ -16,3 +16,7 @@
 
 1-4-1：Goroutines执行并发任务
 
+1-4-2：使用Channel传递消息
+
+1-4-3：使用select执行准备好的channel
+
